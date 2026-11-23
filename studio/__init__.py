@@ -1,0 +1,1 @@
+"""Tattoo studio catalogue and booking application."""

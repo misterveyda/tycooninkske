@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tycoon Inks Ke | Tattoo catalogue</title>
+  </head>
+  <body>
+    <header>
+      <h1>Tycoon Inks Ke</h1>
+      <p>Tattoo studio and design catalogue</p>
+      <a href="{% url 'book-appointment' %}">Request a booking</a>
+      <a href="/admin/">Studio admin</a>
+    </header>
+    <main>
+      <section aria-labelledby="designs-heading">
+        <h2 id="designs-heading">Available designs</h2>
+        {% for design in designs %}
+          <article>
+            <img src="{{ design.image_url }}" alt="{{ design.title }} tattoo design" width="240">
+            <h3>{{ design.title }}</h3>
+            <p>{{ design.style }} by {{ design.artist.name }}</p>
+            <p>From KSh {{ design.starting_price }}</p>
+          </article>
+        {% empty %}
+          <p>No designs are listed yet.</p>
+        {% endfor %}
+      </section>
+      <section aria-labelledby="artists-heading">
+        <h2 id="artists-heading">Our artists</h2>
+        {% for artist in artists %}
+          <article>
+            <h3>{{ artist.name }}</h3>
+            <p>{{ artist.specialty }}</p>
+          </article>
+        {% empty %}
+          <p>No artists are accepting bookings right now.</p>
+        {% endfor %}
+      </section>
+    </main>
+  </body>
+</html>

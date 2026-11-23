@@ -1,0 +1,1 @@
+"""Tycoon Inks Ke Django project."""

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Request a booking | Tycoon Inks Ke</title>
+  </head>
+  <body>
+    <main>
+      <h1>Request a tattoo booking</h1>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Send booking request</button>
+      </form>
+      <p><a href="{% url 'catalogue' %}">Back to designs</a></p>
+    </main>
+  </body>
+</html>
